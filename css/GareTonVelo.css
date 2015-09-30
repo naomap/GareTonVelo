@@ -1,0 +1,152 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11 sept. 2015, 11:26:45
+    Author     : antoine
+*/
+
+#title {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+#Cartocite-logo {
+    margin-bottom: 1px;
+    border:2px solid #999;
+    border-radius:5px;
+    z-index:1;
+    background-color: white;
+}
+#Cartocite-logo img {
+    width: 120px;
+}
+
+#main {
+    display: flex;
+    flex-flow: row wrap; 
+}
+
+#map {
+    height: 700px;
+    width:700px;
+    width: calc(100% - 260px);
+    border: 2px solid #d6aa34;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#rightPanel {
+    flex-flow: col wrap;
+}
+
+#stats {
+    border: 2px solid #d6aa34;
+    border-radius: 5px;
+    height: 355px;
+    width: 200px;
+    margin-top: 0;
+
+    background-color: #FFFFF0;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 0 10px;
+    font: 15px Arial, Helvetica, sans-serif;
+    line-height:130%;
+    color: #555;
+}
+
+#legende {
+    //float:left;
+    border: 2px solid #d6aa34;
+    border-radius: 5px;
+    height: 320px;
+    width: 200px;
+}
+
+.home-control {
+    box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+    background: #fff;
+    border-radius: 5px;
+}
+
+.home-control .button {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-image: url('../img/home.png');
+    display: block;
+    width: 26px;
+    height: 26px;
+}
+
+.leaflet-div-icon {
+	background: transparent;
+	border: none;
+}
+
+.leaflet-marker-icon .number {
+	position: relative;
+	top: -35px;
+        right:3px;
+	font-size: 12px;
+        color: #3E82C7;
+	width: 32px;
+	text-align: right;
+}
+
+.leaflet-marker-icon .missing_number {
+	position: relative;
+	top: -35px;
+        right:3px;
+        color: #C63F56;
+	width: 32px;
+	text-align: right;
+}
+
+.descriptif {
+    background-color: #FFFFF0;
+    color: #342c25;
+    border: 2px solid #d6aa34;
+    border-radius: 5px;
+    font: 15px Arial, Helvetica, sans-serif;
+    margin: 10px 10px 10px 10px;
+    padding: 5px 10px;
+}
+.descriptif h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.descriptif h3 {
+    margin-top: 12px;
+    margin-bottom: 10px;
+    font: 20px Arial, Helvetica, sans-serif;
+}
+.descriptif h4 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font: 18px Arial, Helvetica, sans-serif;
+}
+.descriptif p {
+    margin:0 0 8px 0; 
+}
+.descriptif a {
+    text-decoration: none;
+    color: #7F2F1D;
+}
+.descriptif a:hover {
+    color: #d6aa34;
+}
+
+
+#legende ul {
+    margin-left: -30px;
+}
+#legende li {
+    list-style-type: none;
+}
+#legende li img {
+    margin: 5px 8px 5px 10px;
+}

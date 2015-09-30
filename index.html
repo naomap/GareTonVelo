@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>GareTonVélo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="favicon.png">
+        
+        <!-- Include Leaflet CSS -->
+        <link rel="stylesheet" href="css/normalize.min.css">
+        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.ie.css" />
+        <![endif]-->
+        <link rel="stylesheet" href="css/main.css"/>
+        <link rel="stylesheet" href="css/GareTonVelo.css"/>
+
+    </head>
+    <body>
+        <div id="title" class="descriptif">
+            <div>
+                <h2>GareTonVélo : les stationnements vélo à Nantes</h2>
+                <p>
+                    Carte des stationnements cyclables de Nantes Métropole répertoriés dans <a href="http://www.openstreetmap.org" target="_blank">OpenStreetMap</a>.
+                </p>
+            </div>
+            <div id="Cartocite-logo">
+                <a href="http://cartocite.fr" target="_blank" title="Agence de géomatique à Nantes">
+                    <img src="img/logo-cartocite.png" alt="Carto'CITÉ">
+                </a>
+            </div>
+        </div>
+        
+        <div id="main">
+            <div id="map"></div>
+
+            <div id="rightPanel">
+                <div id="stats" class="descriptif">
+                    <h3>Statistiques</h3>
+                    <div id="numSites">Nombre de sites : </div>
+                    <div id="numPlaces">Nombre de places : </div>
+                    <div id="numCouverts">  dont couvertes : </div>
+
+                    <h4>Places par catégorie</h4>
+                    <div id="numAppuis">Appuis-vélos : </div>
+                    <div id="numCasiers">Casiers : </div>
+                    <div id="numPinces">Pinces-roues : </div>
+                    <div id="numAutres">Autres : </div>
+                    <div id="numNoType">Sans catégorie : </div>
+
+                    <h4>Infos manquantes</h4>
+                    <div id="noCapacity">Sites sans capacité : </div>
+                    <div id="noType">Sites sans catégorie : </div>
+                </div>
+
+                <div id="legende" class="descriptif">
+                    <h3>Légende</h3>
+                    <ul>
+                        <li>
+                            <input type="checkbox" class="filter" value="stands,wide_stands" checked="checked">
+                            <img src="img/parking_stand.png"> Appui-vélos
+                        </li>
+                        <li>
+                            <input type="checkbox" class="filter" value="lockers" checked="checked">
+                            <img src="img/parking_box.png"> Casier à vélo
+                        </li>
+                        <li>
+                            <input type="checkbox" class="filter" value="wall_loops,ground_slots" checked="checked">
+                            <img src="img/parking_slot.png"> Pince-roues
+                        </li>
+                        <li>
+                            <input type="checkbox" class="filter" value="other" checked="checked">
+                            <img src="img/parking.png"> Autres
+                        </li>
+                        <li>
+                            <input type="checkbox" class="filter" value="notype" checked="checked">
+                            <img src="img/parking_notype.png"> Sans catégorie
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+        <!--script type="text/javascript" src="js/leaflet-src.js"></script-->
+        <script type="text/javascript" src="js/spin.min.js"></script>
+        <script type="text/javascript" src="js/GareTonVelo.js"></script>
+        
+        <script>
+            (function() {
+                var app = new GareTonVelo("map");
+                
+                var filters = document.getElementsByClassName("filter");
+                for (var i = 0 ; i < filters.length; i++) {
+                    filters[i].checked = true;
+                    filters[i].addEventListener("click", function() {
+                        app.filterByType();
+                    });
+                }
+            })();
+        </script>
+            
+    </body>
+</html>
