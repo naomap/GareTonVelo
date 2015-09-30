@@ -7,3 +7,5 @@ The bicycle parkings are retrieved from the OpenStretMap database using the Over
 Statistics are displayed and markers are built differently for different scales ; at a large scale the markers 
 show the type of bicycle_parking (stands, wall_loops and so on), their capacity and whether they're covered.
 Incomplete parkings (no type or no capacity) are highlighted in red.
+
+A running map for Nantes (France) can be seen here : http://dev.cartocite.fr/GareTonVelo/
